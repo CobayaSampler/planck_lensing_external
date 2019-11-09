@@ -1,0 +1,15 @@
+.idea
+__pycache__/
+*.py[cod]
+*$py.class
+build/
+develop-eggs/
+dist/
+eggs/
+.eggs/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+*~

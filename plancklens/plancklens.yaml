@@ -1,0 +1,30 @@
+# Planck 2018 release: lensing T+P-based likelihood
+# -- Native python .dataset-based implementation
+# See https://wiki.cosmos.esa.int/planck-legacy-archive/index.php/CMB_spectrum_%26_Likelihood_Code
+
+# Be careful with parameter naming: here A_planck is the same parameter as used by other Planck likelihoods
+# and hence has the same name. When the parameter is not shared, it should be distinctive - avoiding name
+# collisions is currently up to the user.
+
+likelihood:
+  plancklens.plancklens:
+    path: null
+    dataset_file: data_2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8.dataset
+    # Aliases for automatic covariance matrix
+    renames: [lensing]
+    # Speed in evaluations/second
+    speed: 50
+
+params: 
+  A_planck:
+    prior:
+      dist: norm
+      loc: 1
+      scale: 0.0025
+    ref:
+      dist: norm
+      loc: 1
+      scale: 0.002
+    proposal: 0.0005
+    latex: y_\mathrm{cal}
+    renames: calPlanck
