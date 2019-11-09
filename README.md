@@ -3,7 +3,7 @@
 ** work under developement ***
 
 This is an example likelihood package that can be externally installed and then referenced from Cobaya .yaml files 
-via the qualified module name. It just reproduces the Planck 2018 likelihoods already installed with Cobaya.
+via the qualified module name. It just reproduces the Planck 2018 lensing likelihoods already installed with Cobaya.
 
 Requires latest external_modules banch (https://github.com/CobayaSampler/cobaya/pull/53) of Cobaya.
 
