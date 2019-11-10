@@ -9,8 +9,8 @@ Requires latest external_modules banch (https://github.com/CobayaSampler/cobaya/
 
 The likelihood classes can also be instantiated and called directly:
 
-        from plancklens.plancklens import plancklens
-        like = plancklens()
+        from plancklens import PlanckLensing
+        like = PlanckLensing()
         print('chi2 = ',-2*like.log_likelihood(cl_dict, A_planck=1.0))
 
 This example packages data internally. For larger data the data should probably be stored externally and installed separately.
