@@ -7,7 +7,7 @@
 # collisions is currently up to the user.
 
 likelihood:
-  plancklens.plancklens:
+  __self__:
     path: null
     dataset_file: data_2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8.dataset
     # Aliases for automatic covariance matrix
@@ -15,7 +15,7 @@ likelihood:
     # Speed in evaluations/second
     speed: 50
 
-params: 
+params:
   A_planck:
     prior:
       dist: norm

@@ -5,7 +5,7 @@
 # CMB marginalized likelihood (no nuisance parameters)
 
 likelihood:
-  plancklens.cmbmarged:
+  __self__:
     path: null
     dataset_file: data_2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_CMBmarged.dataset
     renames: [lensing]
