@@ -1,5 +1,9 @@
 from setuptools import setup
 from plancklens import __author__, __version__
+import os
+
+file_dir = os.path.abspath(os.path.dirname(__file__))
+os.chdir(file_dir)
 
 setup(name="plancklens",
       version=__version__,

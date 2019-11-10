@@ -42,7 +42,7 @@ class LikeTest(unittest.TestCase):
         chi2 = -2 * model.loglikes({'A_planck': 1.0})[0]
         self.assertAlmostEqual(chi2[0], 8.734, 1)
 
-        for name in ['plancklens.PlanckLensingMarged', 'plancklens.PlanckLensingMarged']:
+        for name in ['plancklens.PlanckLensingMarged', 'plancklens.plancklens.PlanckLensingMarged']:
             info = {'likelihood': {name: None},
                     'theory': {'camb': {"extra_args": {"lens_potential_accuracy": 1}}},
                     'params': camb_params}
