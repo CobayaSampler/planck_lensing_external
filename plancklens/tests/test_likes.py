@@ -15,7 +15,10 @@ class LikeTest(unittest.TestCase):
         from plancklens import PlanckLensingMarged
         import camb
         lmax = 2500
-        pars = camb.set_params(lens_potential_accuracy=1, **camb_params, lmax=lmax)
+        opts = camb_params.copy()
+        opts['lens_potential_accuracy'] = 1
+        opts['lmax'] = lmax
+        pars = camb.set_params(**opts)
         results = camb.get_results(pars)
         cls = results.get_total_cls(lmax, CMB_unit='muK')
         cl_dict = {p: cls[:, i] for i, p in enumerate(['tt', 'ee', 'bb', 'te'])}
