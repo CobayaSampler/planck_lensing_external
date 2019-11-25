@@ -6,14 +6,12 @@
 # and hence has the same name. When the parameter is not shared, it should be distinctive - avoiding name
 # collisions is currently up to the user.
 
-likelihood:
-  __self__:
-    path: null
-    dataset_file: data_2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8.dataset
-    # Aliases for automatic covariance matrix
-    renames: [lensing]
-    # Speed in evaluations/second
-    speed: 50
+path: null
+dataset_file: data_2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8.dataset
+# Aliases for automatic covariance matrix
+aliases: [lensing]
+# Speed in evaluations/second
+speed: 50
 
 params:
   A_planck:

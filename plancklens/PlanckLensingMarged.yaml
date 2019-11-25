@@ -4,10 +4,10 @@
 
 # CMB marginalized likelihood (no nuisance parameters)
 
-likelihood:
-  __self__:
-    path: null
-    dataset_file: data_2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_CMBmarged.dataset
-    renames: [lensing]
-    # Speed in evaluations/second
-    speed: 90
+path: null
+dataset_file: data_2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_CMBmarged.dataset
+aliases: [lensing]
+# Speed in evaluations/second
+speed: 90
+
+params:
