@@ -12,7 +12,7 @@ camb_params = {
 class LikeTest(unittest.TestCase):
 
     def test_indep(self):
-        from plancklens import PlanckLensingMarged
+        from plancklensing import PlanckLensingMarged
         import camb
         lmax = 2500
         opts = camb_params.copy()
@@ -26,7 +26,7 @@ class LikeTest(unittest.TestCase):
         like = PlanckLensingMarged()
         self.assertAlmostEqual(-2 * like.log_likelihood(cl_dict), 8.76, 1)
 
-        from plancklens import PlanckLensing
+        from plancklensing import PlanckLensing
         like = PlanckLensing()
         self.assertAlmostEqual(-2 * like.log_likelihood(cl_dict, A_planck=1.0), 8.734, 1)
 
@@ -38,17 +38,17 @@ class LikeTest(unittest.TestCase):
     def test_cobaya(self):
         from cobaya.model import get_model
 
-        info = {'likelihood': {'plancklens.PlanckLensing': None},
+        info = {'likelihood': {'plancklensing.PlanckLensing': None},
                 'theory': {'camb': {"extra_args": {"lens_potential_accuracy": 1}}},
-                'params': camb_params}
+                'params': camb_params, 'debug': True}
         model = get_model(info)
         chi2 = -2 * model.loglikes({'A_planck': 1.0})[0]
         self.assertAlmostEqual(chi2[0], 8.734, 1)
 
-        for name in ['plancklens.PlanckLensingMarged', 'plancklens.plancklens.PlanckLensingMarged']:
+        for name in ['plancklensing.PlanckLensingMarged', 'plancklensing.plancklensing.PlanckLensingMarged']:
             info = {'likelihood': {name: None},
-                    'theory': {'camb': {"extra_args": {"lens_potential_accuracy": 1}}},
-                    'params': camb_params}
+                    'theory': {'camb': {"extra_args": {"lens_potential_accuracy": 1}, 'stop_at_error': True}},
+                    'params': camb_params, 'stop_at_error': True}
         model = get_model(info)
         chi2 = -2 * model.loglikes({})[0]
         self.assertAlmostEqual(chi2[0], 8.765, 1)
