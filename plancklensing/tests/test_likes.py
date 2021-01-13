@@ -18,6 +18,7 @@ class LikeTest(unittest.TestCase):
         opts = camb_params.copy()
         opts['lens_potential_accuracy'] = 1
         opts['lmax'] = lmax
+        opts['halofit_version'] = 'mead'
         pars = camb.set_params(**opts)
         results = camb.get_results(pars)
         cls = results.get_total_cls(lmax, CMB_unit='muK')
