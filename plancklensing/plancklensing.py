@@ -1,8 +1,4 @@
-try:
-    # more recent versions
-    from cobaya.likelihoods.base_classes import CMBlikes
-except ImportError:
-    from cobaya.likelihoods._base_classes import _CMBlikes as CMBlikes
+from cobaya.likelihoods.base_classes import CMBlikes
 
 
 class PlanckLensing(CMBlikes):

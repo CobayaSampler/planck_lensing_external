@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plancklensing"
+dynamic = ["version"]
+authors = [
+    {name = "Antony Lewis"}
+]
+description = "Example external Cobaya likelihood package: Planck 2018 lensing"
+license = "LGPL-3.0-or-later"
+requires-python = ">=3.10"
+dependencies = [
+    "cobaya>=3.5.0"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Astronomy"
+]
+
+[project.optional-dependencies]
+test = ["camb>=1.5.0"]
+
+[tool.setuptools.dynamic]
+version = {attr = "plancklensing.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["plancklensing*"]
+
+[tool.setuptools.package-data]
+plancklensing = ["*.yaml", "*.bibtex", "data_2018/*", "data_2018/**/*"]
